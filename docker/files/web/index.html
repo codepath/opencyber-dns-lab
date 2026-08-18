@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northwind Bank — Secure Sign In</title>
+  <style>
+    :root { --nw-navy: #0b2e4f; --nw-gold: #c8a34e; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #eef2f6; color: #1a2733;
+    }
+    header {
+      background: var(--nw-navy); color: #fff; padding: 14px 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    header .mark { color: var(--nw-gold); font-size: 22px; font-weight: 700; letter-spacing: .5px; }
+    header .sub { opacity: .8; font-size: 13px; }
+    main { max-width: 380px; margin: 48px auto; padding: 0 16px; }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 2px 14px rgba(11,46,79,.12); padding: 28px; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    p.lede { margin: 0 0 20px; color: #5a6b7b; font-size: 14px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+    input {
+      width: 100%; padding: 10px 12px; border: 1px solid #c7d0d9; border-radius: 6px; font-size: 15px;
+    }
+    button {
+      width: 100%; margin-top: 22px; padding: 11px; border: 0; border-radius: 6px;
+      background: var(--nw-navy); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+    }
+    .lock { color: #2e7d32; font-size: 12px; margin-top: 16px; text-align: center; }
+    footer { text-align: center; color: #8a99a8; font-size: 12px; margin-top: 26px; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="mark">NORTHWIND BANK</span>
+    <span class="sub">Online Banking</span>
+  </header>
+  <main>
+    <div class="card">
+      <h1>Sign in to Online Banking</h1>
+      <p class="lede">Access your accounts securely.</p>
+      <form method="POST" action="/login">
+        <label for="username">User ID</label>
+        <input id="username" name="username" type="text" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">Sign In</button>
+      </form>
+      <div class="lock">🔒 Your connection is encrypted</div>
+    </div>
+    <footer>© Northwind Bank. This is a fictional entity used for security training.</footer>
+  </main>
+</body>
+</html>
