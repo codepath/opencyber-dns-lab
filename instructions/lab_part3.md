@@ -121,7 +121,7 @@ It tells you right away whether you named the right C2 domain — it never revea
 
 ### Tips for Success
 
-- **`check-c2` keeps rejecting your answer?** Make sure you're giving it the **domain name** (like `sync.cdn-telemetry.test`), not the **IP address** it resolves to (a `198.51.100.x` number). A domain is a name made of words and dots; an IP is four numbers separated by dots. The question asks for the C2 *domain*, so your answer should read like a name, not a number.
+- **`check-c2` keeps rejecting your answer?** Make sure you're giving it the **domain name** (like `www.example.test`), not the **IP address** it resolves to (a `192.0.2.x` number). A domain is a name made of words and dots; an IP is four numbers separated by dots. The question asks for the C2 *domain*, so your answer should read like a name, not a number.
 - **`dig` on your candidate returns nothing?** Then it isn't the C2 — the real channel resolves (to a `198.51.100.x` address); the benign decoy doesn't resolve at all. Re-scan for the domain whose *subdomains keep changing* into fresh random blocks.
 - **Decoded string is garbage?** Check three things: you kept *only* the random chunk labels (not the fixed `sync` label or the `.test` tail), you joined them in log order (top to bottom) with nothing between them, and you decoded as **Base32** (`From Base32` / `base32 -d`), not Base64.
 - **Lost in 220 log lines?** `grep` out the noise you've already cleared as benign — `grep -v <pattern>` *excludes* matches, so you can hide the domains you've ruled out and look at what's left.
